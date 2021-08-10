@@ -1,23 +1,23 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class Post(models.Model):
     text = models.TextField(max_length=700)
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
-        'auth.User',
+        User,
         on_delete=models.CASCADE,
-        related_name='posts',
         verbose_name="Пост"
     )
     group = models.ForeignKey(
         "Group",
-        on_delete=models.CASCADE,
-        related_name='group',
-        blank=True,
         null=True,
-        verbose_name="Группа"
-    )
+        on_delete=models.PROTECT,
+        blank=True,
+        verbose_name="Группа")
 
 
 class Group(models.Model):
