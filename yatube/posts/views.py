@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 
@@ -6,7 +5,7 @@ from .models import Post, Group
 def index(request):
     template = 'posts/index.html'
     title = 'Это главная страница проекта Yatube'
-    posts = Post.objects.order_by('group')
+    posts = Post.objects.order_by('-pub_date')[:10]
     text = 'Последние обновления на сайте'
     context = {
         'title': title,
