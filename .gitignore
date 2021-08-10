@@ -1,4 +1,5 @@
 # Byte-compiled / optimized / DLL files
+yatube/posts/migrations/
 .vscode/
 venv/
 __pycache__/
