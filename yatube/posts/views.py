@@ -1,20 +1,3 @@
-from django.views.generic import ListView, DetailView
-#from django.shortcuts import render
-from .models import Post, Group
-
-
-class BlogListView(ListView):
-    model = Post
-    paginate_by = 3
-    template_name = 'base.html'
-
-
-class BlogDetailView(DetailView):
-    model = Group
-    template_name = 'group_detail.html'
-
-
-'''
 from .models import Post, Group
 
 from django.shortcuts import render, get_object_or_404
@@ -35,10 +18,11 @@ def index(request):
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
+    posts = Post.objects.order_by('group')[:10]
+    text = f'Записи сообщества <{group}>'
     context = {
         'group': group,
+        'text': text,
         'posts': posts,
     }
     return render(request, 'posts/group_list.html', context)
-'''
