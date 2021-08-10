@@ -1,5 +1,4 @@
 from django.db import models
-import time
 
 
 class Post(models.Model):
