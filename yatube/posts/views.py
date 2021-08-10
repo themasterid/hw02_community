@@ -1,6 +1,6 @@
-from .models import Post, Group
-
 from django.shortcuts import render, get_object_or_404
+
+from .models import Post, Group
 
 
 def index(request):
@@ -17,6 +17,7 @@ def index(request):
 
 
 def group_posts(request, slug):
+    template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
     posts = Post.objects.order_by('group')[:10]
     text = f'Записи сообщества <{group}>'
@@ -25,4 +26,4 @@ def group_posts(request, slug):
         'text': text,
         'posts': posts,
     }
-    return render(request, 'posts/group_list.html', context)
+    return render(request, template, context)
