@@ -1,13 +1,13 @@
 from django.http import HttpResponse
-from django.shortcuts import render
-from .models import Post
+from django.shortcuts import render, get_object_or_404
+from .models import Post, Group
 
 
 def index(request):
     template = 'posts/index.html'
     title = 'Это главная страница проекта Yatube'
-    posts = Post.objects.order_by('-pub_date')[:10]
-    text = 'Главная страница'
+    posts = Post.objects.order_by('group')
+    text = 'Последние обновления на сайте'
     context = {
         'title': title,
         'text': text,
@@ -17,11 +17,12 @@ def index(request):
 
 
 def group_posts(request, slug):
-    template = 'posts/group_list.html'
-    title = 'Здесь будет информация о группах проекта Yatube'
-    text = 'Страница о группах проекта Yatube'
+    group = get_object_or_404(Group, slug=slug)
+    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
+    text = f'Записи сообщества <{group}>'
     context = {
-        'title': title,
+        'group': group,
         'text': text,
+        'posts': posts,
     }
-    return render(request, template, context)
+    return render(request, 'posts/group_list.html', context)

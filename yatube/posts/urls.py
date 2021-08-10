@@ -6,7 +6,8 @@ from . import views
 app_name = 'posts'
 
 urlpatterns = [
-    path('', views.index),
-    path('group/<slug:slug>/', views.group_posts),
-    path('', views.index, name='posts'),
+    path('', views.index, name='index'),
+    path('group/<slug>/', views.group_posts),
+    path('posts/', views.index, name='posts'),
+    path('group/', views.index, name='group_list'),
 ]
