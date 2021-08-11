@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
 {% block content %}
-{{ text }}
+<!-- 
+  Эту шляпу ниже сделал как в макете,
+  правильно или нет решать не мне ).
+  Или тут просто выводить название группы?
+-->
+<h1>{{ group }} – зеркало русской революции.</h1>
+{{ title }}
 {% for post in posts %}
   <ul>
     <li>
       Автор: {{ post.author.get_full_name }}
     </li>
     <li>
-      Дата публикации: {{ post.pub_date|date:"d.m.Y" }}
+      Дата публикации: {{ post.pub_date|date:'d E Y' }}
     </li>
   </ul>
-  <p>{{ post.text }}</p>    
-  <a href="">все записи группы</a>
+    <p>{{ post.text }}</p>    
   {% if not forloop.last %}<hr>{% endif %}
 {% endfor %}
 {% endblock %} 
