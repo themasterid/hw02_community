@@ -1,11 +1,10 @@
 # Byte-compiled / optimized / DLL files
-yatube/posts/migrations/
 .vscode/
 venv/
 __pycache__/
 *.py[cod]
 *$py.class
-/static/img/
+static/img/
 
 # C extensions
 *.so
