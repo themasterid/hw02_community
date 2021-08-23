@@ -8,7 +8,6 @@ def index(request):
     template = 'posts/index.html'
     posts = Post.objects.all()[:10]
     context = {'posts': posts}
-    print(Post.objects.all()[:1])
     return render(request, template, context)
 
 

@@ -28,9 +28,15 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+LOGIN_URL = 'users:login'
+LOGIN_REDIRECT_URL = 'posts:index'
+LOGOUT_REDIRECT_URL = 'posts:index'
+
 # Application definition
 
 INSTALLED_APPS = [
+    'core',
+    'users.apps.UsersConfig',
     'posts.apps.PostsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -104,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru-RU'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
