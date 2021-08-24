@@ -5,7 +5,7 @@
 {% block content %}
   <h2>{{group.title}}</h2>
   <p>{{group.description|linebreaks }}</p>
-{% for post in posts %}
+{% for post in page_obj %}
   <ul>
     <li>
       Автор: {{ post.author.get_full_name }}
@@ -17,4 +17,9 @@
     <p>{{ post.text|linebreaks }}</p>    
   {% if not forloop.last %}<hr>{% endif %}
 {% endfor %}
+
+<div class="d-flex justify-content-center">
+  <div>{% include 'posts/includes/paginator.html' %}</div>
+</div>
+
 {% endblock %}

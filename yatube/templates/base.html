@@ -14,13 +14,13 @@
       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
       <title>{% block title %}{% endblock %}</title>
   </head>	
-  <body>    
+  <body> 
     {% include 'includes/header.html' %}
     <main>
       <div class="container py-5">
         {% block content %}
         {% endblock %}
-      </div>  
+      </div>
     </main>
     {% include 'includes/footer.html' %}
   </body>
