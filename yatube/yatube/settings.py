@@ -1,12 +1,21 @@
 import os
 
+import environ
+
+env = environ.Env()
+
+environ.Env.read_env()
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 's3vk^7l6+rf$b4(k1_wuik6cn&$z!zm&w!35@eyc9$(ur9vx@r'
+SECRET_KEY = env(
+    'SECRET_KEY',
+    default="unsafe-secret-key-45t548fh48fh4gefgh4734753erhg#$@#$")
 
-DEBUG = True
+DEBUG = env('DEBUG', default='True') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env(
+    'ALLOWED_HOSTS', default='localhost').split(', ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -73,7 +82,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
