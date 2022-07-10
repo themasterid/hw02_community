@@ -40,7 +40,7 @@ python -m venv venv
 source venv/Scripts/activate
 ```
 
-> Для деактивации виртуального окружения выполянем (после работы):
+> Для деактивации виртуального окружения выполним (после работы):
 > ```bash
 > deactivate
 > ```
@@ -75,12 +75,12 @@ python yatube/manage.py createsuperuser
 python yatube/manage.py collectstatic
 ```
 
-Предварительно сняв коментарий с:
+Предварительно сняв комментарий с:
 ```bash
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ```
 
-И закоментировав: 
+И закомментировав: 
 ```bash
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 ```
@@ -109,5 +109,8 @@ python yatube/manage.py runserver localhost:80
 ```
 
 После чего проект будет доступен по адресу http://localhost/
+
+Заходим в http://localhost/admin и создаем группы и записи.
+После чего записи и группы появятся на главной странице.
 
 Автор: [Дмитрий Клепиков](https://github.com/themasterid) :+1:
