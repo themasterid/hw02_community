@@ -87,7 +87,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 Иначе получим ошибку: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
 
-В папку с проектом, где файл settings.py добавляем файл .env куда прописываем наши параметры
+В папку с проектом, где файл settings.py добавляем файл .env куда прописываем наши параметры:
 
 ```bash
 SECRET_KEY='Ваш секретный ключ'
