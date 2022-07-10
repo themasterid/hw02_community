@@ -23,12 +23,12 @@ class Group(models.Model):
         verbose_name='Описание',
     )
 
-    def __str__(self):
-        return self.title
-
     class Meta:
         verbose_name_plural = 'Группы'
         verbose_name = 'Группа'
+
+    def __str__(self):
+        return self.title
 
 
 class Post(models.Model):
@@ -56,10 +56,10 @@ class Post(models.Model):
         related_name='posts',
     )
 
-    def __str__(self):
-        return self.text
-
     class Meta:
         ordering = ['-pub_date']
         verbose_name_plural = 'Посты'
         verbose_name = 'Пост'
+
+    def __str__(self):
+        return self.text
