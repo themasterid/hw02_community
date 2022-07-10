@@ -95,4 +95,4 @@ python yatube/manage.py runserver localhost:80
 
 После чего проект будет доступен по адресу http://localhost/
 
-Автор: 
+Автор: [Дмитрий Клепиков](https://github.com/themasterid) :+1:
