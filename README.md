@@ -66,7 +66,7 @@ python yatube/manage.py migrate
 Создаем супер пользователя
 
 ```bash
-python yatube/manage.py migrate
+python yatube/manage.py createsuperuser
 ```
 
 При желании делаем коллекцию статики
