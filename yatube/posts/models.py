@@ -1,5 +1,7 @@
 from django.contrib.auth import get_user_model
+
 from django.db import models
+
 
 User = get_user_model()
 
@@ -14,7 +16,7 @@ class Group(models.Model):
 
     class Meta:
         verbose_name_plural = 'Группы'
-        verbose_name = 'Группу'
+        verbose_name = 'Группа'
 
 
 class Post(models.Model):
@@ -37,12 +39,8 @@ class Post(models.Model):
         blank=True,
         null=True,
         on_delete=models.SET_NULL,
-        related_name='posts',
-        verbose_name='Группа'
+        related_name='posts'
     )
-
-    def __str__(self):
-        return self.text
 
     class Meta:
         ordering = ['-pub_date']
