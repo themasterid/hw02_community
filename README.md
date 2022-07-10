@@ -22,30 +22,30 @@ git clone https://github.com/themasterid/hw02_community.git
 git clone git@github.com:themasterid/hw02_community.git
 ```
 
-Переходим в папку с проектом.
+Переходим в папку с проектом:
 
 ```bash
 cd hw02_community
 ```
 
-Устанавливаем виртуальное окружение
+Устанавливаем виртуальное окружение:
 
 ```bash
 python -m venv venv
 ```
 
-Активируем виртуальное окружение
+Активируем виртуальное окружение:
 
 ```bash
 source venv/Scripts/activate
 ```
 
-> Для деактивации виртуального окружения выполянем (после работы)
+> Для деактивации виртуального окружения выполянем (после работы):
 > ```bash
 > deactivate
 > ```
 
-Устанавливаем зависимости
+Устанавливаем зависимости:
 
 ```bash
 python -m pip install --upgrade pip
@@ -54,7 +54,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Применяем миграции
+Применяем миграции:
 
 ```bash
 python yatube/manage.py makemigrations
@@ -63,13 +63,13 @@ python yatube/manage.py makemigrations
 python yatube/manage.py migrate
 ```
 
-Создаем супер пользователя
+Создаем супер пользователя:
 
 ```bash
 python yatube/manage.py createsuperuser
 ```
 
-При желании делаем коллекцию статики
+При желании делаем коллекцию статики:
 
 ```bash
 python yatube/manage.py collectstatic
@@ -87,7 +87,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 Иначе получим ошибку: You're using the staticfiles app without having set the STATIC_ROOT setting to a filesystem path.
 
-В папку с проектом, где файл добавляем файл .env куда прописываем наши параметры
+В папку с проектом, где файл settings.py добавляем файл .env куда прописываем наши параметры
 
 ```bash
 SECRET_KEY='Ваш секретный ключ'
@@ -95,7 +95,7 @@ ALLOWED_HOSTS='127.0.0.1, localhost'
 DEBUG=True
 ```
 
-Не забываем добавить в .gitingore файлы
+Не забываем добавить в .gitingore файлы:
 
 ```bash
 .env
