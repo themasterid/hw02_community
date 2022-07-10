@@ -1,5 +1,4 @@
-# backend_community_homework
-Домашняя работа Яндекс.Практикум: 
-- Django
+# hw02_community - Бот для проверки статуса домашней работы на код ревью в Яндекс.Практикум
+## Спринт 3 - Сообщества
 
-[![CI](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml/badge.svg?branch=master)](https://github.com/yandex-praktikum/hw02_community/actions/workflows/python-app.yml)
+### hw02_community - отслеживание статуса код-ревю Яндекс.Практикум.
