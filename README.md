@@ -113,4 +113,10 @@ python yatube/manage.py runserver localhost:8080
 Заходим в http://localhost:8080/admin и создаем группы и записи.
 После чего записи и группы появятся на главной странице.
 
+Запускаем тестов:
+
+```bash
+pytest
+```
+
 Автор: [Дмитрий Клепиков](https://github.com/themasterid) :+1:
