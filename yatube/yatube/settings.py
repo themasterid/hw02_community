@@ -92,8 +92,14 @@ USE_TZ = True
 
 DATE_FORMAT = 'd E Y'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+POSTS_PAGE = 10
+GROUPS_PAGE = 10
